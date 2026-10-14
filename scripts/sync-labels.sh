@@ -6,8 +6,9 @@
 # Creates every label in labels.json that a repository lacks, and updates the color and
 # description of those that differ. Running it again changes nothing.
 #
-#   --prune    also deletes labels that aren't in labels.json, but only when no issue or
-#              pull request uses them; it reports the ones it keeps.
+#   --prune    also deletes labels that aren't in labels.json, but only when no issue, pull
+#              request or discussion uses them; it reports the ones it keeps, and stops
+#              without deleting if it can't tell.
 #   --dry-run  prints what it would do, and makes only read-only calls.
 #
 # Needs gh, authenticated with permission to manage the repositories' labels, and python3.
@@ -58,14 +59,55 @@ PY
 
 lower() { printf '%s' "$1" | tr '[:upper:]' '[:lower:]'; }
 
-# Number of issues and pull requests, in any state, that carry the label.
+# Number of issues, pull requests and discussions, in any state, that carry the label. It looks
+# the label up by its exact name, and prints nothing and fails when GitHub can't say.
 usage_count() {
-  local repo="$1" name="$2" issues prs
-  issues="$(gh issue list -R "$repo" --label "$name" --state all --limit 1 \
-    --json number --jq length </dev/null)"
-  prs="$(gh pr list -R "$repo" --label "$name" --state all --limit 1 \
-    --json number --jq length </dev/null)"
-  echo $((issues + prs))
+  python3 - "$1" "$2" <<'PY'
+import json, subprocess, sys
+
+repo, label = sys.argv[1], sys.argv[2]
+owner, name = repo.split("/", 1)
+query = """
+query($owner: String!, $name: String!, $label: String!, $cursor: String) {
+  repository(owner: $owner, name: $name) {
+    label(name: $label) { issues { totalCount } pullRequests { totalCount } }
+    discussions(first: 100, after: $cursor) {
+      pageInfo { hasNextPage endCursor }
+      nodes { labels(first: 100) { nodes { name } } }
+    }
+  }
+}
+"""
+count, cursor = None, None
+while True:
+    args = ["gh", "api", "graphql", "-f", f"query={query}", "-f", f"owner={owner}",
+            "-f", f"name={name}", "-f", f"label={label}"]
+    if cursor:
+        args += ["-f", f"cursor={cursor}"]
+    result = subprocess.run(args, capture_output=True, text=True, stdin=subprocess.DEVNULL)
+    if result.returncode != 0:
+        sys.exit(result.stderr.strip() or f"gh exited with {result.returncode}")
+    try:
+        response = json.loads(result.stdout)
+    except json.JSONDecodeError:
+        sys.exit(f"gh returned something other than JSON: {result.stdout[:200]!r}")
+    if response.get("errors"):
+        sys.exit("; ".join(error.get("message", "") for error in response["errors"]))
+    repository = response["data"]["repository"]
+    if count is None:
+        if repository["label"] is None:
+            sys.exit(f"no label named {label!r}")
+        count = (repository["label"]["issues"]["totalCount"]
+                 + repository["label"]["pullRequests"]["totalCount"])
+    discussions = repository["discussions"]
+    for discussion in discussions["nodes"]:
+        names = [node["name"].lower() for node in discussion["labels"]["nodes"]]
+        count += names.count(label.lower())
+    if not discussions["pageInfo"]["hasNextPage"]:
+        break
+    cursor = discussions["pageInfo"]["endCursor"]
+print(count)
+PY
 }
 
 act() {
@@ -126,7 +168,11 @@ for repo in "${repos[@]}"; do
     done <<<"$wanted"
     [ "$keep" -eq 0 ] || continue
 
-    count="$(usage_count "$repo" "$ename")"
+    # A command substitution ignores errexit, so check the count before trusting it.
+    if ! count="$(usage_count "$repo" "$ename")" || ! [[ "$count" =~ ^[0-9]+$ ]]; then
+      echo "$repo: can't tell whether \"$ename\" is in use, so it stays; stopping" >&2
+      exit 1
+    fi
     if [ "$count" -gt 0 ]; then
       echo "  kept, in use: $ename"
       continue

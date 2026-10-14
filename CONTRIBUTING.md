@@ -41,8 +41,9 @@ scripts/sync-labels.sh --dry-run --prune salah-kit/SalahTimes salah-kit/SalahKit
 
 Check the output, then run the same command without `--dry-run`. The script creates missing
 labels and updates colors and descriptions. With `--prune` it also deletes labels that aren't
-in `labels.json`, but keeps any that an issue or pull request uses, and says so. Running it
-twice changes nothing the second time. It needs the GitHub CLI, signed in with permission to
+in `labels.json`, but keeps any that an issue, pull request or discussion uses, and says so;
+if GitHub can't say whether a label is in use, it stops without deleting it. Running it twice
+changes nothing the second time. It needs the GitHub CLI, signed in with permission to
 manage labels.
 
 ## Checks

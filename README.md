@@ -37,7 +37,7 @@ scripts/sync-labels.sh --dry-run --prune salah-kit/SalahKit   # see what would c
 scripts/sync-labels.sh --prune salah-kit/SalahKit             # apply it
 ```
 
-`--prune` deletes labels that aren't in `labels.json`, but only those no issue or pull request uses.
+`--prune` deletes labels that aren't in `labels.json`, but only those no issue, pull request or discussion uses. If GitHub can't say whether a label is in use, the script stops without deleting it.
 
 ## Documentation
 
