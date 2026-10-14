@@ -1,0 +1,47 @@
+[
+  {
+    "name": "bug",
+    "color": "d73a4a",
+    "description": "Something isn't working"
+  },
+  {
+    "name": "enhancement",
+    "color": "a2eeef",
+    "description": "New feature or request"
+  },
+  {
+    "name": "documentation",
+    "color": "0075ca",
+    "description": "Improvements or additions to documentation"
+  },
+  {
+    "name": "calculation-method",
+    "color": "fbca04",
+    "description": "A method's parameters differ from what its authority publishes"
+  },
+  {
+    "name": "timetable",
+    "color": "0e8a16",
+    "description": "Computed times differ from a published timetable"
+  },
+  {
+    "name": "translation",
+    "color": "c5def5",
+    "description": "Wrong or missing text in a language"
+  },
+  {
+    "name": "rfc",
+    "color": "f9d0c4",
+    "description": "A proposed change to a package's public API"
+  },
+  {
+    "name": "good first issue",
+    "color": "7057ff",
+    "description": "Good for newcomers"
+  },
+  {
+    "name": "help wanted",
+    "color": "008672",
+    "description": "Extra attention is needed"
+  }
+]
