@@ -267,6 +267,7 @@ def check_swift_format() -> None:
 
 FENCE = re.compile(r"^(\s*)(```|~~~)")
 INLINE_CODE = re.compile(r"`[^`]*`")
+PROFILE = ROOT / "profile" / "README.md"
 INLINE_LINK = re.compile(r"!?\[(?:[^\]\\]|\\.)*\]\(\s*(<[^>]*>|[^)\s]+)(?:\s+[\"'(][^)]*)?\)")
 REFERENCE = re.compile(r"^\s{0,3}\[[^\]]+\]:\s*(<[^>]*>|\S+)")
 HTML_LINK = re.compile(r"<(?:a|img)\b[^>]*?\b(?:href|src)=[\"']([^\"']+)[\"']", re.IGNORECASE)
@@ -310,6 +311,11 @@ def check_relative_links() -> None:
         for number, target in links_in(text):
             if target.startswith("#") or SCHEME.match(target):
                 continue  # An anchor in this file, or http(s), mailto and other schemes.
+            if path == PROFILE:
+                # The org page shows this file at github.com/salah-kit, where a relative link
+                # doesn't resolve against this repository.
+                problem(path, f"line {number}: link target {target!r} must be an absolute URL")
+                continue
             relative = unquote(target.split("#", 1)[0].split("?", 1)[0])
             if not relative:
                 continue
