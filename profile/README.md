@@ -20,15 +20,18 @@ salah-kit gives a prayer-time app its foundations: a calculation engine, a typed
 2. **Read the documentation.** [SalahKit's](https://salah-kit.github.io/SalahKit/) getting-started articles cover a calculated prayer app, a mosque timetable with iqama, widgets and alerts. [SalahTimes'](https://salah-kit.github.io/SalahTimes/) cover choosing a method and high latitudes.
 3. **Or add the packages to an app you have.** Both install with Swift Package Manager; their READMEs show how.
 
+The [adoption guide](https://github.com/salah-kit/.github/blob/main/docs/adopting.md) helps you choose products, test an integration and report feedback. Both packages have been [submitted to Swift Package Index](https://github.com/SwiftPackageIndex/PackageList/pull/15688); acceptance and the index's compatibility builds are pending.
+
 ## Status
 
 The packages are pre-1.0. They follow Semantic Versioning, so until 1.0 a minor release may change the API. Each release's notes list what is proven and what is pending.
+
+SalahTimes' [validation report](https://github.com/salah-kit/SalahTimes/blob/main/docs/validation.md) records independent ephemeris comparisons, official timetable coverage and remaining method-specific differences. Choose and check the method or published timetable appropriate to your location; a named preset is not a guarantee of agreement with every local authority.
 
 Simulators, cross-process harnesses and fixed-clock tests cover the packages' behavior today. The evidence that still needs a person, hardware or elapsed time includes:
 
 - a spot-check of the computed times against a local mosque's timetable;
 - a native-language check of the calculation methods' sources, several of which are secondary;
-- full-year official timetables for Qatar, Kuwait and the UAE, and a committed comparison with an independent ephemeris;
 - a seven-day iPhone widget soak, with the app never opened, and the timeline's cost on the oldest supported iPhone;
 - the examples on real devices: a mosque board on an iPad, a phone app on an iPhone, a watch complication on an Apple Watch;
 - notification delivery on a real iPhone while the app is closed, and in-process alerts across real Mac sleep and wake;
