@@ -179,7 +179,7 @@ for repo in "${repos[@]}"; do
     fi
     act "delete: $ename"
     if [ "$dry_run" -eq 0 ]; then
-      gh label delete "$ename" -R "$repo" --yes </dev/null >/dev/null
+      gh label delete -R "$repo" --yes -- "$ename" </dev/null >/dev/null
     fi
   done <<<"$existing"
 done
