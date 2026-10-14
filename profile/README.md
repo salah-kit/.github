@@ -20,7 +20,7 @@ salah-kit gives a prayer-time app its foundations: a calculation engine, a typed
 2. **Read the documentation.** [SalahKit's](https://salah-kit.github.io/SalahKit/) getting-started articles cover a calculated prayer app, a mosque timetable with iqama, widgets and alerts. [SalahTimes'](https://salah-kit.github.io/SalahTimes/) cover choosing a method and high latitudes.
 3. **Or add the packages to an app you have.** Both install with Swift Package Manager; their READMEs show how.
 
-The [adoption guide](https://github.com/salah-kit/.github/blob/main/docs/adopting.md) helps you choose products, test an integration and report feedback. Both packages have been [submitted to Swift Package Index](https://github.com/SwiftPackageIndex/PackageList/pull/15688); acceptance and the index's compatibility builds are pending.
+The [adoption guide](https://github.com/salah-kit/.github/blob/main/docs/adopting.md) helps you choose products, test an integration and report feedback. Both packages are listed on Swift Package Index: [SalahTimes](https://swiftpackageindex.com/salah-kit/SalahTimes) and [SalahKit](https://swiftpackageindex.com/salah-kit/SalahKit). Their [submission was accepted](https://github.com/SwiftPackageIndex/PackageList/pull/15688); the index's compatibility results are pending.
 
 ## Status
 
@@ -30,7 +30,6 @@ SalahTimes' [validation report](https://github.com/salah-kit/SalahTimes/blob/mai
 
 Simulators, cross-process harnesses and fixed-clock tests cover the packages' behavior today. The evidence that still needs a person, hardware or elapsed time includes:
 
-- a spot-check of the computed times against a local mosque's timetable;
 - a native-language check of the calculation methods' sources, several of which are secondary;
 - a seven-day iPhone widget soak, with the app never opened, and the timeline's cost on the oldest supported iPhone;
 - the examples on real devices: a mosque board on an iPad, a phone app on an iPhone, a watch complication on an Apple Watch;
