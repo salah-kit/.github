@@ -2,7 +2,7 @@
 
 Open-source Swift packages that any prayer app can build on.
 
-salah-kit gives a prayer-time app its foundations: a calculation engine, a typed prayer schedule from calculated times or a mosque's published timetable, widget timelines that don't need the app to run, prayer alerts within the system's notification limit, and SwiftUI building blocks you restyle. Public adopters come first: the API is shaped by what many apps need. Salah, the ecosystem's own macOS app, is moving onto the packages as one consumer and a working sample; it doesn't set the shape of the API. To make a prayer app, build your own on the packages instead of forking an existing one. The code is MIT-licensed; each repository's NOTICE lists the third-party data and media it includes, under their own terms.
+salah-kit gives a prayer-time app its foundations: a calculation engine, a typed prayer schedule from calculated times or a mosque's published timetable, widget timelines that don't need the app to run, prayer alerts within the system's notification limit, and SwiftUI building blocks you restyle. Public adopters come first: the API is shaped by what many apps need. Salah, the ecosystem's own macOS app, uses the packages as one consumer and a working sample; it doesn't set the shape of the API. To make a prayer app, build your own on the packages instead of forking an existing one. The code is MIT-licensed; each repository's NOTICE lists the third-party data and media it includes, under their own terms.
 
 ## Repositories
 
@@ -11,7 +11,7 @@ salah-kit gives a prayer-time app its foundations: a calculation engine, a typed
 | [SalahTimes](https://github.com/salah-kit/SalahTimes) | The calculation engine: published methods, high-latitude rules and Qibla, in a Swift package with no dependencies. Its JSON vectors are the contract that engines in other languages must pass. | [![SalahTimes release](https://img.shields.io/github/v/release/salah-kit/SalahTimes?include_prereleases&sort=semver&label=)](https://github.com/salah-kit/SalahTimes/releases) |
 | [SalahKit](https://github.com/salah-kit/SalahKit) | The app layer, in six products: SalahCore (the schedule, published timetables, iqama, prayer names), SalahCalculation (SalahTimes as a schedule source), SalahWidgets, SalahUI, SalahAlerts and SalahFixtures. | [![SalahKit release](https://img.shields.io/github/v/release/salah-kit/SalahKit?include_prereleases&sort=semver&label=)](https://github.com/salah-kit/SalahKit/releases) |
 | [SalahStarter](https://github.com/salah-kit/SalahStarter) | The template a new app starts from: an iPhone app and a widget extension wired to a shared App Group, with prayer alerts, on SalahKit. | Template |
-| [Salah](https://github.com/salah-kit/Salah) | A macOS menu-bar app for prayer times, open source. Its 1.0 release moves it onto SalahKit, as the ecosystem's own sample of the packages in use. | [![Salah release](https://img.shields.io/github/v/release/salah-kit/Salah?include_prereleases&sort=semver&label=)](https://github.com/salah-kit/Salah/releases) |
+| [Salah](https://github.com/salah-kit/Salah) | A macOS menu-bar app for prayer times, open source and built on SalahKit. Its source releases are a working sample of the packages in use. | [![Salah release](https://img.shields.io/github/v/release/salah-kit/Salah?include_prereleases&sort=semver&label=)](https://github.com/salah-kit/Salah/releases) |
 | [.github](https://github.com/salah-kit/.github) | This page, the community files every repository shares, and the [ecosystem standard](https://github.com/salah-kit/.github/blob/main/STANDARD.md) all of them follow. | |
 
 ## Start here
@@ -37,7 +37,7 @@ Simulators, cross-process harnesses and fixed-clock tests cover the packages' be
 - outside review of the API RFCs;
 - an app maintained independently of this organization.
 
-Each release's notes list what that release leaves pending: [SalahTimes](https://github.com/salah-kit/SalahTimes/releases), [SalahKit](https://github.com/salah-kit/SalahKit/releases).
+Each release's notes list what that release leaves pending: [SalahTimes](https://github.com/salah-kit/SalahTimes/releases), [SalahKit](https://github.com/salah-kit/SalahKit/releases), [Salah](https://github.com/salah-kit/Salah/releases).
 
 The [1.0 conditions](https://github.com/salah-kit/.github/blob/main/STANDARD.md#releases) are in the standard.
 

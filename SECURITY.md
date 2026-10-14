@@ -24,7 +24,7 @@ You can expect an acknowledgment within about a week. Anything after that, inclu
 |---|---|
 | SalahTimes | The latest release |
 | SalahKit | The latest release |
-| Salah | The latest release; the `main` branch until its first release |
+| Salah | The latest release |
 | SalahStarter | The `main` branch, the template new projects start from |
 
 The packages are pre-1.0. A fix ships in a new release; older releases don't get backports.

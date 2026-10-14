@@ -6,6 +6,11 @@ every change is listed under Unreleased.
 
 ## [Unreleased]
 
+### Changed
+
+- Describe Salah's released use of SalahKit on the organization profile, link its pending
+  evidence, and apply the security policy to its latest release.
+
 ### Added
 
 - The organization's profile page, `profile/README.md`: the ecosystem and its public-first goal,
