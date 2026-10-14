@@ -1,0 +1,32 @@
+name: Links
+
+# External sites can be down for a while, so this runs weekly and on demand, never on pull
+# requests, where a flaky site would block an unrelated change.
+on:
+  schedule:
+    - cron: "17 6 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  links:
+    name: Check links
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.13"
+
+      - name: Check the absolute links in Markdown and issue forms
+        run: python scripts/check-links.py

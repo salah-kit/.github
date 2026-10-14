@@ -1,0 +1,41 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+defaults:
+  run:
+    shell: bash
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  check:
+    name: Check
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.13"
+
+      # The only dependency: issue forms are YAML, and check.py parses them with PyYAML.
+      - name: Install PyYAML
+        run: python -m pip install pyyaml==6.0.3
+
+      - name: Check issue forms, labels, .swift-format and relative links
+        run: python scripts/check.py
+
+      - name: Check the label script
+        run: shellcheck scripts/sync-labels.sh
