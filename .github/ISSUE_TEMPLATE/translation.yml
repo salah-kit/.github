@@ -1,0 +1,69 @@
+name: Translation
+description: A prayer name or other text is wrong or missing in a language.
+labels: ["translation"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Translations live in String Catalogs. Machine-drafted entries are marked as needing review until a native speaker checks them, so a review from a native speaker is especially welcome.
+  - type: dropdown
+    id: repo
+    attributes:
+      label: Repository
+      description: SalahKit holds the prayer names. Salah and SalahStarter hold their own interface text.
+      options:
+        - SalahTimes
+        - SalahKit
+        - Salah
+        - SalahStarter
+        - Not sure
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      description: The release, or the commit if you build from `main`.
+      placeholder: "0.2.0"
+    validations:
+      required: true
+  - type: input
+    id: language
+    attributes:
+      label: Language and locale code
+      placeholder: "Urdu, ur"
+    validations:
+      required: true
+  - type: textarea
+    id: strings
+    attributes:
+      label: Strings
+      description: The text that's wrong, with its key in the String Catalog if you know it, or where it appears.
+    validations:
+      required: true
+  - type: textarea
+    id: current
+    attributes:
+      label: Current text
+    validations:
+      required: true
+  - type: textarea
+    id: suggested
+    attributes:
+      label: Suggested text
+    validations:
+      required: true
+  - type: dropdown
+    id: native-speaker
+    attributes:
+      label: Are you a native speaker of this language?
+      options:
+        - "Yes"
+        - "No"
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Context
+      description: Optional. Why the suggestion is better, regional usage, or a screenshot of where the text appears.

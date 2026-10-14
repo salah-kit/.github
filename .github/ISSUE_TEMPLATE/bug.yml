@@ -1,0 +1,67 @@
+name: Bug report
+description: Something in a salah-kit package or app doesn't work as documented.
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting a bug. For a security problem, don't use this form: follow the [security policy](https://github.com/salah-kit/.github/blob/main/SECURITY.md).
+
+        A prayer time that differs from a published timetable has its own form, **Timetable**, and a method parameter that differs from its authority's publication has **Calculation method**.
+  - type: dropdown
+    id: repo
+    attributes:
+      label: Repository
+      description: Which repository the bug is in.
+      options:
+        - SalahTimes
+        - SalahKit
+        - Salah
+        - SalahStarter
+        - Not sure
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      description: The release, or the commit if you build from `main`.
+      placeholder: "0.2.0"
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Platform and tools
+      description: The OS and version you run on, and your Xcode or Swift version.
+      placeholder: "iOS 27.0 simulator, Xcode 27.0"
+    validations:
+      required: true
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened
+      description: What you saw, including any error message.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What you expected
+      description: What should have happened, and where the documentation says so if it does.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: The smallest code or the steps that show the problem. Include the location, time zone and date if times are involved.
+      render: swift
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs or other context
+      description: Optional. Crash logs, console output, or anything else that helps.
+      render: text

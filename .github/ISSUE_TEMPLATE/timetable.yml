@@ -1,0 +1,76 @@
+name: Timetable mismatch
+description: Computed prayer times differ from a timetable published for a place.
+labels: ["timetable"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        A published timetable that disagrees with the computed times is useful even if you don't know why. Give the place, the dates and the source, and we'll look for the cause.
+  - type: dropdown
+    id: repo
+    attributes:
+      label: Repository
+      description: Where you saw the computed times.
+      options:
+        - SalahTimes
+        - SalahKit
+        - Salah
+        - SalahStarter
+        - Not sure
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      description: The release, or the commit if you build from `main`.
+      placeholder: "0.2.0"
+    validations:
+      required: true
+  - type: input
+    id: place
+    attributes:
+      label: Place
+      description: The place's name, its coordinates in decimal degrees, and its IANA time zone.
+      placeholder: "Oslo, 59.9139, 10.7522, Europe/Oslo"
+    validations:
+      required: true
+  - type: input
+    id: dates
+    attributes:
+      label: Dates
+      description: The dates you compared, in the place's own calendar days.
+      placeholder: "2026-06-15 to 2026-06-21"
+    validations:
+      required: true
+  - type: textarea
+    id: source
+    attributes:
+      label: The published timetable
+      description: Who publishes it, a link to it, and the method it says it uses, if it says.
+    validations:
+      required: true
+  - type: textarea
+    id: settings
+    attributes:
+      label: Settings used
+      description: The method, madhab (Asr rule), high-latitude rule, rounding and any minute adjustments behind the computed times. Code is fine.
+      render: swift
+    validations:
+      required: true
+  - type: textarea
+    id: comparison
+    attributes:
+      label: Published and computed times
+      description: The times side by side, for at least one day. Mark the ones that differ.
+      value: |
+        | Date | Prayer | Published | Computed |
+        |---|---|---|---|
+        |  |  |  |  |
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Anything else
+      description: Optional. For example, whether the timetable rounds times, or adds minutes for safety (ihtiyat).

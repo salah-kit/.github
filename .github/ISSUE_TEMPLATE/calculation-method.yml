@@ -1,0 +1,87 @@
+name: Calculation method correction
+description: A method's parameters differ from what its authority publishes.
+labels: ["calculation-method"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Each method preset must match what its authority publishes. SalahTimes' [METHODS.md](https://github.com/salah-kit/SalahTimes/blob/main/METHODS.md) gives the source for every value.
+
+        A link to the authority's own publication is what makes a correction possible. If you only have times that disagree, use the **Timetable** form instead; that's useful too.
+  - type: dropdown
+    id: repo
+    attributes:
+      label: Repository
+      description: SalahTimes holds the presets. SalahKit holds the country suggestions and the settings an app passes on.
+      options:
+        - SalahTimes
+        - SalahKit
+        - Salah
+        - SalahStarter
+        - Not sure
+      default: 0
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      description: The release, or the commit if you build from `main`.
+      placeholder: "0.1.0"
+    validations:
+      required: true
+  - type: input
+    id: method
+    attributes:
+      label: Method
+      description: The preset's name in the package, or the method's common name.
+      placeholder: "CalculationMethod.ummAlQura"
+    validations:
+      required: true
+  - type: input
+    id: authority
+    attributes:
+      label: Authority
+      description: The body that defines the method.
+      placeholder: "Umm al-Qura University, Makkah"
+    validations:
+      required: true
+  - type: textarea
+    id: publication
+    attributes:
+      label: The authority's publication
+      description: A link to the authority's own document or page, its date, and the part that defines the value. Translate or quote the relevant lines if it isn't in English.
+    validations:
+      required: true
+  - type: input
+    id: parameter
+    attributes:
+      label: Parameter
+      description: The value that's wrong, such as the Fajr angle, the Isha angle or interval, the Asr rule, the Maghrib offset or a rounding rule.
+      placeholder: "Fajr angle"
+    validations:
+      required: true
+  - type: input
+    id: current-value
+    attributes:
+      label: Current value
+      description: The value the package uses now.
+    validations:
+      required: true
+  - type: input
+    id: proposed-value
+    attributes:
+      label: Proposed value
+      description: The value the authority publishes.
+    validations:
+      required: true
+  - type: textarea
+    id: sample-timetable
+    attributes:
+      label: A sample timetable
+      description: Optional. A link to, or a few rows of, a timetable the authority publishes with this method, with its place and dates.
+  - type: textarea
+    id: context
+    attributes:
+      label: Anything else
+      description: Optional. Where the method is used, or how the definition changed over time.

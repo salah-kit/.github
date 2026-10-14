@@ -1,0 +1,55 @@
+name: API change (RFC)
+description: Propose a change to a package's public API.
+labels: ["rfc"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Public API changes to SalahTimes and SalahKit go through an RFC. Start here with the use case. When the proposal is accepted for writing up, it becomes `docs/rfcs/NNNN-title.md` in that repository, through a pull request, and it's discussed in that repository's GitHub Discussions.
+
+        Public API stays small, and each addition needs an app that uses it. Bug fixes and changes that don't touch the public API don't need an RFC.
+  - type: dropdown
+    id: package
+    attributes:
+      label: Package
+      options:
+        - SalahTimes
+        - SalahKit
+        - Not sure
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      description: The release you're building on.
+      placeholder: "0.2.0"
+    validations:
+      required: true
+  - type: textarea
+    id: use-case
+    attributes:
+      label: The app and the use case
+      description: The app or kind of app that needs this, what it's trying to do, and why the current API doesn't allow it or makes it hard.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed API
+      description: The declarations you'd add or change, and a short example of their use.
+      render: swift
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives
+      description: What else you considered, including doing it in the app with today's API, and why it falls short.
+    validations:
+      required: true
+  - type: textarea
+    id: impact
+    attributes:
+      label: Compatibility
+      description: Optional. What breaks for current adopters, and whether the JSON vectors change.

@@ -1,0 +1,14 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Report a vulnerability
+    url: https://github.com/salah-kit/.github/blob/main/SECURITY.md
+    about: Report security problems privately, as the security policy describes. Never in a public issue.
+  - name: Ask about SalahTimes
+    url: https://github.com/salah-kit/SalahTimes/discussions
+    about: Questions about calculation methods, high-latitude rules and the JSON vectors.
+  - name: Ask about SalahKit
+    url: https://github.com/salah-kit/SalahKit/discussions
+    about: Questions about schedules, timetables, widgets, alerts and the UI building blocks.
+  - name: Getting help
+    url: https://github.com/salah-kit/.github/blob/main/SUPPORT.md
+    about: Where the documentation is and where to ask.
