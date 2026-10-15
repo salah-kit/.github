@@ -8,6 +8,10 @@ every change is listed under Unreleased.
 
 ### Changed
 
+- Give the organization profile a Contribute section, which links the open `help wanted`
+  issues, each repository's CONTRIBUTING and the RFC process.
+- Link the adoption guide's API feedback to the SalahKit RFCs, and state the standard's
+  branch protection plainly.
 - Describe Salah's released use of SalahKit on the organization profile, link its pending
   evidence, and apply the security policy to its latest release.
 

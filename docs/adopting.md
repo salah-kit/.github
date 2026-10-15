@@ -31,7 +31,7 @@ Use the affected repository's issue forms for defects and its Discussions for in
 
 Include the package tag and resolved versions, platform and OS, the data source, the smallest reproduction, expected and actual behavior, and relevant logs or screenshots. Remove credentials and private location or account details before posting. For a calculation mismatch, include the method, date, time zone and authoritative timetable/source, distinguishing published precautionary minutes from calculation errors.
 
-For API feedback, review the [SalahKit RFCs and their amendments](https://github.com/salah-kit/SalahKit/tree/main/docs/rfcs): schedules and sources, calculation, alerts, and widgets/UI. Describe what your app cannot express, any workaround, and whether another consumer has the same need.
+For API feedback, review the [SalahKit RFCs](https://github.com/salah-kit/SalahKit/tree/main/docs/rfcs): schedules and sources, calculation, alerts, and widgets/UI. Describe what your app cannot express, any workaround, and whether another consumer has the same need.
 
 ## What independent adoption establishes
 

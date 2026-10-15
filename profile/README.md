@@ -39,7 +39,7 @@ Simulators, cross-process harnesses and fixed-clock tests cover the packages' be
 - outside review of the API RFCs;
 - an app maintained independently of this organization.
 
-Each release's notes list what that release leaves pending: [SalahTimes](https://github.com/salah-kit/SalahTimes/releases), [SalahKit](https://github.com/salah-kit/SalahKit/releases), [Salah](https://github.com/salah-kit/Salah/releases).
+The [open `help wanted` issues](https://github.com/search?q=org%3Asalah-kit+label%3A%22help+wanted%22+state%3Aopen&type=issues) give the steps for the checks a contributor can do. Each release's notes list what that release leaves pending: [SalahTimes](https://github.com/salah-kit/SalahTimes/releases), [SalahKit](https://github.com/salah-kit/SalahKit/releases), [Salah](https://github.com/salah-kit/Salah/releases).
 
 The [1.0 conditions](https://github.com/salah-kit/.github/blob/main/STANDARD.md#releases) are in the standard.
 
@@ -48,10 +48,11 @@ The [1.0 conditions](https://github.com/salah-kit/.github/blob/main/STANDARD.md#
 - Calculation engines for the web (TypeScript) and Android (Kotlin), each in its own repository. Each must pass the same [JSON vectors](https://github.com/salah-kit/SalahTimes/blob/main/Vectors/README.md) as SalahTimes before its first release.
 - 1.0 of the packages, once the conditions above hold.
 
-## Contributing
+## Contribute
 
+- **Pick up a check.** Some checks need a person: a real Mac or iPhone, days of use, a mosque's timetable, or a native speaker. Each [`help wanted` issue](https://github.com/search?q=org%3Asalah-kit+label%3A%22help+wanted%22+state%3Aopen&type=issues) says what to do, what to record and how to report it.
 - **Report a problem** with the issue forms in the repository it concerns: bugs, calculation-method corrections, timetables that disagree with the computed times, and translations.
-- **Propose an API change** with an RFC. Each package keeps its RFCs in `docs/rfcs/` and discusses them in GitHub Discussions.
-- **Send code** after reading the repository's own `CONTRIBUTING.md`. Every repository follows the [ecosystem standard](https://github.com/salah-kit/.github/blob/main/STANDARD.md).
+- **Propose an API change** through the RFC process of [SalahTimes](https://github.com/salah-kit/SalahTimes/blob/main/CONTRIBUTING.md#api-changes) or [SalahKit](https://github.com/salah-kit/SalahKit/blob/main/CONTRIBUTING.md#rfcs). Each package keeps its RFCs in `docs/rfcs/` and discusses them in GitHub Discussions.
+- **Send code** after reading the repository's CONTRIBUTING: [SalahTimes](https://github.com/salah-kit/SalahTimes/blob/main/CONTRIBUTING.md), [SalahKit](https://github.com/salah-kit/SalahKit/blob/main/CONTRIBUTING.md), [Salah](https://github.com/salah-kit/Salah/blob/main/CONTRIBUTING.md) or [SalahStarter](https://github.com/salah-kit/SalahStarter/blob/main/CONTRIBUTING.md). Every repository follows the [ecosystem standard](https://github.com/salah-kit/.github/blob/main/STANDARD.md).
 
 Questions go to [SalahTimes](https://github.com/salah-kit/SalahTimes/discussions) or [SalahKit](https://github.com/salah-kit/SalahKit/discussions) Discussions. Everyone here follows the [code of conduct](https://github.com/salah-kit/.github/blob/main/CODE_OF_CONDUCT.md). Report vulnerabilities privately, as the [security policy](https://github.com/salah-kit/.github/blob/main/SECURITY.md) describes.

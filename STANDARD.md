@@ -126,4 +126,4 @@ Every repo uses the same labels: `bug`, `enhancement`, `documentation`, `calcula
 ## Governance
 
 - Public API changes to a package go through an RFC: `docs/rfcs/NNNN-title.md` in that repo, discussed in GitHub Discussions.
-- After the automated run, `main` is protected in every repo: no force pushes, no deletion, linear history.
+- `main` is protected in every repo: no force pushes, no deletion, linear history.
