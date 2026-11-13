@@ -9,6 +9,6 @@ DEVELOPMENT_TEAM =
 // registers an identifier to one team, so a developer signing with another team names their
 // own in Local.xcconfig.
 APP_BUNDLE_IDENTIFIER = io.github.salah-kit.App
-APP_GROUP_IDENTIFIER = group.io.github.salah-kit.App
+APP_GROUP_IDENTIFIER = group.io.github.salah-kit.App.shared
 
 #include? "Local.xcconfig"

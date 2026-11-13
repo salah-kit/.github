@@ -17,7 +17,7 @@ Calculation engines for the web (TypeScript) and Android (Kotlin) come later, ea
 ## Names
 
 - Repos and Swift modules use UpperCamelCase and start with `Salah`.
-- Bundle identifiers start with `io.github.salah-kit.`, the reverse of the org's GitHub Pages domain. App Groups are `group.io.github.salah-kit.<App>`; Salah's is `group.io.github.salah-kit.Salah.shared`, because App Group identifiers are unique across Apple's developer teams and the shorter one is registered to a team that can't release it. The template uses `com.example.` placeholders.
+- Bundle identifiers start with `io.github.salah-kit.`, the reverse of the org's GitHub Pages domain. App Groups are `group.io.github.salah-kit.<App>.shared`: an App Group identifier is unique across Apple's developer teams, and several of the shorter names are registered to a team that can't release them. The template uses `com.example.` placeholders.
 - `main` is the only long-lived branch. Work happens on short-lived branches named for their topic.
 - Tags are SemVer without a `v`, like `0.1.0`.
 
