@@ -2,8 +2,9 @@
 DEVELOPMENT_TEAM = YOURTEAMID
 
 // Apple registers a bundle identifier and an App Group to one team, and the app's own are
-// registered to its maintainers' team. To sign with another team, uncomment these two
-// lines and name identifiers of your own: the other targets' bundle identifiers follow
-// APP_BUNDLE_IDENTIFIER. Unsigned and simulator builds need neither line.
+// registered to its maintainers' team. To sign with another team, uncomment these lines
+// and name identifiers of your own, the second only when the app has an App Group: the
+// other targets' bundle identifiers follow APP_BUNDLE_IDENTIFIER. Unsigned and simulator
+// builds need neither line.
 // APP_BUNDLE_IDENTIFIER = com.yourname.App
 // APP_GROUP_IDENTIFIER = group.com.yourname.App

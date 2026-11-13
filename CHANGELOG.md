@@ -8,6 +8,10 @@ every change is listed under Unreleased.
 
 ### Changed
 
+- Name App Groups `group.io.github.salah-kit.<App>.shared` in the standard, and make an app's
+  bundle identifier and App Group build settings there and in `templates/Config/`, so that a
+  developer signing with another team can name their own. On macOS, apps and extensions that
+  share an App Group set `REGISTER_APP_GROUPS`.
 - Give the organization profile a Contribute section, which links the open `help wanted`
   issues, each repository's CONTRIBUTING and the RFC process.
 - Link the adoption guide's API feedback to the SalahKit RFCs, and state the standard's
