@@ -17,7 +17,7 @@ Calculation engines for the web (TypeScript) and Android (Kotlin) come later, ea
 ## Names
 
 - Repos and Swift modules use UpperCamelCase and start with `Salah`.
-- Salah uses `com.omarkhaled.salah` for its macOS, iOS and tvOS apps so they can share one App Store record. Watch and extension identifiers append their target suffixes. SalahKit examples use `com.omarkhaled.salah.examples.<Example>`. App Groups prefix the main app identifier with `group.`, such as `group.com.omarkhaled.salah`. SalahStarter keeps `com.example.` placeholders for adopters.
+- Salah uses `com.omarkhaled.salah` for its macOS, iOS and tvOS apps so they can share one App Store record. Watch and extension identifiers append their target suffixes. SalahKit examples use the `com.omarkhaled.salah.examples` namespace; the WatchComplication example uses `com.omarkhaled.salah.examples.Watch`. App Groups prefix the main app identifier with `group.`, such as `group.com.omarkhaled.salah`. SalahStarter keeps `com.example.` placeholders for adopters.
 - Choose the permanent bundle identifier before the first upload to App Store Connect, including TestFlight: Apple locks it at that upload. A bundle identifier does not need to match the app's website domain.
 - `main` is the only long-lived branch. Work happens on short-lived branches named for their topic.
 - Tags are SemVer without a `v`, like `0.1.0`.
