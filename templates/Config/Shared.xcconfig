@@ -4,4 +4,11 @@
 CODE_SIGN_STYLE = Automatic
 DEVELOPMENT_TEAM =
 
+// The app's identity: its bundle identifier, which the other targets' follow, and the App
+// Group it shares with its extensions. Entitlements and Info.plist files read both. Apple
+// registers an identifier to one team, so a developer signing with another team names their
+// own in Local.xcconfig.
+APP_BUNDLE_IDENTIFIER = io.github.salah-kit.App
+APP_GROUP_IDENTIFIER = group.io.github.salah-kit.App
+
 #include? "Local.xcconfig"

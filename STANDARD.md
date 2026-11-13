@@ -111,6 +111,8 @@ A job that can't run on hosted runners, for example because a simulator runtime 
 - Signing:
   - Never commit `DEVELOPMENT_TEAM`.
   - A committed `Config/Shared.xcconfig` (from `templates/Config/`) ends with `#include? "Local.xcconfig"`, and each developer puts their team in their own gitignored `Local.xcconfig`.
+  - An app's bundle identifier and App Group are build settings, `APP_BUNDLE_IDENTIFIER` and `APP_GROUP_IDENTIFIER`, set in `Shared.xcconfig` or in a file it includes. Its targets' entitlements and Info.plist files read them, and its code reads the group from the Info.plist, so an app and its extensions can't name different groups. Apple registers an identifier to one team, so a developer signing with another team names their own in `Local.xcconfig`.
+  - On macOS, every target that shares a `group.` App Group sets `REGISTER_APP_GROUPS`, so that its provisioning profile grants the group; macOS keeps a process without that out of the group's container.
 - Every target that uses a required-reason API has a privacy manifest.
 - Strings live in String Catalogs. Every UI supports Arabic and right-to-left layout. Machine-drafted translations are marked as needing review.
 - Accessibility:
