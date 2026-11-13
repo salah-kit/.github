@@ -9,7 +9,7 @@ DEVELOPMENT_TEAM =
 // APP_GROUP_IDENTIFIER, the App Group the app shares with its extensions; an app without one
 // leaves the line out. Apple registers an identifier to one team, so a developer signing
 // with another team names their own in Local.xcconfig.
-APP_BUNDLE_IDENTIFIER = io.github.salah-kit.App
-APP_GROUP_IDENTIFIER = group.io.github.salah-kit.App.shared
+APP_BUNDLE_IDENTIFIER = com.omarkhaled.salah.App
+APP_GROUP_IDENTIFIER = group.com.omarkhaled.salah.App
 
 #include? "Local.xcconfig"

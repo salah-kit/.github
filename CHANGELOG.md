@@ -8,7 +8,11 @@ every change is listed under Unreleased.
 
 ### Changed
 
-- Name App Groups `group.io.github.salah-kit.<App>.shared` in the standard, and make an app's
+- Use `com.omarkhaled.salah` for Salah across iOS, macOS and tvOS,
+  `com.omarkhaled.salah.examples.<Example>` for examples, and `group.` before each
+  app identifier for its App Group. Choose the permanent ID before the first TestFlight
+  or App Store build upload.
+- Make an app's
   bundle identifier and App Group build settings there and in `templates/Config/`, so that a
   developer signing with another team can name their own. On macOS, apps and extensions that
   share an App Group set `REGISTER_APP_GROUPS`.
